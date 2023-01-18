@@ -1,0 +1,32 @@
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        
+        <!-- 
+            TO DO 
+            ADD TOGGLES FOR SYMBOLS AND NUMBERS ---- DONE
+            ADD A WAY TO CAPTURE USERS DESIRED PASSWORD LENGTH ---- DONE
+         -->
+         
+        <h1>Generate a random password</h1>
+        <p>Never use an insecure password again</p>
+        <label for="wantNumbers">
+            Numbers <input type="checkbox" id="wantNumbers" onclick="isNumChecked()">    
+        </label>
+        <label for="wantSymbols" >
+            Symbols <input type="checkbox" id="wantSymbols" onclick="isSymChecked()">
+        </label>
+        <p>Choose your passwords length, minimum 11 characters, maximum 50 characters</p>
+        <input id="pass-length" type="number" min="11" max="50" value="11" onblur="getVal()">
+        <button onclick="passGenV3()">Generate Passwords</button>
+        <div class="password-container" onclick="copy()">
+            <p id="password-one-el"></p>
+        </div>
+        <div class="password-container" onclick="copy()">
+            <p id="password-two-el"></p>                    
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
