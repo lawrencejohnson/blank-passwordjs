@@ -1,32 +1,49 @@
 <html>
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-        <link rel="stylesheet" href="index.css">
+    <head>
+        <!-- The `title` element is a required element for the `head` tag. -->
+        <title>Password Gen v1.1</title>
+
+        <!-- When using 3rd-party hosts for assets, use a sha verification to reduce vulnerabilities, check out https://www.srihash.org/ for ez mode usage -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha384-M86HUGbBFILBBZ9ykMAbT3nVb0+2C7yZlF8X2CiKNpDOQjKroMJqIeGZ/Le8N2Qp" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="index.css">
     </head>
     <body>
-        
-        <!-- 
-            TO DO 
-            ADD TOGGLES FOR SYMBOLS AND NUMBERS ---- DONE
-            ADD A WAY TO CAPTURE USERS DESIRED PASSWORD LENGTH ---- DONE
-         -->
-         
-        <h1>Generate a random password</h1>
-        <p>Never use an insecure password again</p>
-        <label for="wantNumbers">
-            Numbers <input type="checkbox" id="wantNumbers" onclick="isNumChecked()">    
-        </label>
-        <label for="wantSymbols" >
-            Symbols <input type="checkbox" id="wantSymbols" onclick="isSymChecked()">
-        </label>
-        <p>Choose your passwords length, minimum 11 characters, maximum 50 characters</p>
-        <input id="pass-length" type="number" min="11" max="50" value="11" onblur="getVal()">
-        <button onclick="passGenV3()">Generate Passwords</button>
-        <div class="password-container" onclick="copy()">
-            <p id="password-one-el"></p>
-        </div>
-        <div class="password-container" onclick="copy()">
-            <p id="password-two-el"></p>                    
-        </div>
+        <header>
+            <h1>Generate a random password</h1>
+            <p>Never use an insecure password again</p>
+        </header>
+
+        <main id="main-content">
+            <form id="password-form">
+                <fieldset>
+                    <legend>Settings</legend>
+                    <label for="wantNumbers">
+                        Numbers <input type="checkbox" id="wantNumbers">    
+                    </label>
+
+                    <label for="wantSymbols" >
+                        Symbols <input type="checkbox" id="wantSymbols">
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Create Password</legend>
+                    <p>Choose your passwords length, minimum 11 characters, maximum 50 characters</p>
+
+                    <input id="pass-length" type="number" min="11" max="50" value="11">
+                    <button id="button-password-generate">Generate Passwords</button>
+                </fieldset>
+            </form>
+            
+            <div class="password-container">
+                <p id="password-one-el"></p>
+            </div>
+    
+            <div class="password-container">
+                <p id="password-two-el"></p>                    
+            </div>
+        </main>
+
         <script src="index.js"></script>
     </body>
 </html>

@@ -1,12 +1,38 @@
-body {
-    margin: 0;
+html {
+    /* This scaling setting makes it so 1rem = 10px, standard in a lot of css kits because it makes it easier to translate */
+    font-size: 62.5%;
 }
 
- /*
-    TODO
-    Replicate template styles
- */
+body {
+    background-color: white;
+    padding: 0 2rem;
+}
 
-.password-container {
-    /* background-color: blue; */
+header {
+    background-color: lightgray;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+}
+
+main {
+    background-color: lightgray;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+p, label, legend, button, input[type="text"], input[type="number"] {
+    font-size: 1.8rem;
+}
+
+fieldset {
+    margin-bottom: 2rem;
+}
+
+label {
+    display: block;
+    margin: 0.5rem 0;
 }
